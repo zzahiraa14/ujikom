@@ -46,12 +46,12 @@
                 <table border="1" cellspacing="0" class="table">
                     <thead>
                         <tr>
-                            <th width="40px">No</th>
-                            <th>Nama Kategori</th>
-                            <th>Nama Produk</th>
+                            <th width="30px">No</th>
+                            <th width="150px">Nama Kategori</th>
+                            <th width="320px">Nama Produk</th>
                             <th width="120px">Harga</th>
-                            <th width="300px">Deskripsi</th>
-                            <th>Gambar</th>
+                            <th width="500px">Deskripsi</th>
+                            <th width="20px">Gambar</th>
                             <th width="70px">Status</th>
                             <th width="120px">Update</th>
                         </tr>
