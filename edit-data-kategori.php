@@ -25,7 +25,7 @@
     </style>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon1.ico">
 </head>
 <body>
 
