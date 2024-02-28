@@ -74,6 +74,7 @@ header ul li a {
     padding: 20px 0 20px 15px;
     display: inline-block;
     color: white;
+    font-size: 17px;
 }
 
 footer {
@@ -115,5 +116,20 @@ footer {
 
 .table tr td {
     padding: 5px 10px;
+}
+
+.search {
+    padding: 15px 0;
+    background-color: white;
+    border: 1px solid #6d2e46;
+}
+
+.search input[type=search] {
+    width: 60%;
+    padding: 10px;
+}
+
+.search input[type=submit] {
+    
 }
 

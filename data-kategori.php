@@ -19,7 +19,7 @@
     </style>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/apple-touch-icon.png">
 </head>
 <body>
 
@@ -55,6 +55,8 @@
                         <?php
                             $no = 1;
                             $kategori = mysqli_query($conn, "SELECT * FROM kategori ORDER BY id_kategori DESC");
+                            if(mysqli_num_rows($kategori) > 0){
+                            
                             while($row = mysqli_fetch_array($kategori)){
                         ?>
                         <tr>
@@ -62,6 +64,10 @@
                             <td><?php echo $row['nama_kategori'] ?></td>
                             <td><a href="edit-data-kategori.php?id=<?php echo $row['id_kategori'] ?>">Edit</a> || <a href="hapus-data-kategori.php?idk=<?php echo $row['id_kategori'] ?>" onclick="return confirm('Konfirmasi hapus Data Kategori')">Hapus</a></td>
                         </tr>
+                        <?php }}else{ ?>
+                            <tr>
+                                <td colspan="3">Tidak Ada Data</td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>

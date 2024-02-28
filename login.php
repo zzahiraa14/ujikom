@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/apple-touch-icon.png">
 </head>
 <body id="bg-login">
     <div class="box-login">

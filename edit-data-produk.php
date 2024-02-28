@@ -6,6 +6,9 @@
     }
 
     $produk = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = '".$_GET['id']."' ");
+    if(mysqli_num_rows($produk) == 0){
+        echo '<script>window.location="data-produk.php"</script>';
+    }
     $p = mysqli_fetch_object($produk);
 ?>
 <!DOCTYPE html>
@@ -22,7 +25,7 @@
     </style>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/apple-touch-icon.png">
 </head>
 <body>
 

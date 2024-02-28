@@ -18,7 +18,7 @@
     </style>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/apple-touch-icon.png">
 </head>
 <body>
 
@@ -27,13 +27,13 @@
         <div class="container">
             <h1><a href="dashboard.php">Babyshop</a></h1>
             <ul>
-                <div class="kata">
+                
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="data-kategori.php">Data Kategori</a></li>
                 <li><a href="data-produk.php">Data Produk</a></li>
                 <li><a href="keluar.php">Keluar</a></li>
-                </div>
+                
             </ul>
         </div>
     </header>
