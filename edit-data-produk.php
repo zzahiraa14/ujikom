@@ -91,7 +91,7 @@
                     // jika admin mengganti gambar
                     if($filename != ''){
 
-                        $type1 = explode('.', $filename);
+                    $type1 = explode('.', $filename);
                     $type2 = $type1[1];
 
                     $newname = 'produk'.time().'.'.$type2;

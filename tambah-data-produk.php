@@ -89,7 +89,8 @@
 
                     // validasi format file
                     if(!in_array($type2, $tipe_diizinkan)){
-                        // jika format file tidak ada dalam array tipe diizinkan
+
+                    // jika format file tidak ada dalam array tipe diizinkan
                         echo '<script>alert("Format file tidak diizinkan!")</script>';
 
                     }else{
@@ -101,14 +102,13 @@
                         $insert = mysqli_query($conn, "INSERT INTO produk VALUE (null, '".$kategori."', '".$nama."', '".$harga."', '".$deskripsi."', '".$newname."', '".$status."', null) ");
 
                         if($insert){
-                            echo '<script>alert("Berhasil Menambahkan Produk!")</script>';
+                            echo '<script>alert("Berhasil Menambahkan Data Produk!")</script>';
                             echo '<script>window.location="data-produk.php"</script>';
                         }else{
-                            echo 'Tambah Data Gagal!'.mysqli_error($conn);
+                            echo 'Tambah Data Produk Gagal!'.mysqli_error($conn);
                         }
                         
                     }
-
 
                 }
                 ?>

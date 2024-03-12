@@ -48,7 +48,7 @@
                             <th width="30px">No</th>
                             <th width="150px">Nama Kategori</th>
                             <th width="320px">Nama Produk</th>
-                            <th width="150px">Harga</th>
+                            <th width="160px">Harga</th>
                             <th width="500px">Deskripsi</th>
                             <th width="30px">Gambar</th>
                             <th width="70px">Status</th>
