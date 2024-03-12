@@ -25,7 +25,7 @@
     <!-- header -->
     <header>
         <div class="container">
-            <h1><a href="dashboard.php">Babyshop</a></h1>
+            <h1><a href="profil.php">Babyshop</a></h1>
             <ul>
                 
                 <li><a href="dashboard.php">Dashboard</a></li>
@@ -43,7 +43,7 @@
         <div class="container">
             <h3>Ini adalah Halaman Dashboard!</h3>
             <div class="box">
-                <h4>Selamat Datang <?php echo $_SESSION['a_global']->nama_admin?> di Babyshop!</h4>
+                <h4>Selamat Datang <?php echo $_SESSION['a_global']->nama_admin ?> di Babyshop!</h4>
             </div>
         </div>
     </div>

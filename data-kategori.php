@@ -26,9 +26,8 @@
     <!-- header -->
     <header>
         <div class="container">
-            <h1><a href="dashboard.php">Babyshop</a></h1>
+            <h1><a href="profil.php">Babyshop</a></h1>
             <ul>
-                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="data-kategori.php">Data Kategori</a></li>
                 <li><a href="data-produk.php">Data Produk</a></li>
@@ -42,13 +41,13 @@
         <div class="container">
             <h3>Ini adalah Halaman Data Kategori!</h3>
             <div class="box">
-                <p><a href="tambah-data-kategori.php">Tambah Data Kategori</a></p>
+                <p class="kata"><a href="tambah-data-kategori.php">Tambah Data Kategori</a></p>
                 <table border="1" cellspacing="0" class="table">
                     <thead>
                         <tr>
                             <th width="60px">No</th>
                             <th>Nama Kategori</th>
-                            <th width="170px">Update</th>
+                            <th width="200px">Update</th>
                         </tr>
                     </thead>
                     <tbody>

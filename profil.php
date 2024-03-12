@@ -29,9 +29,8 @@
     <!-- header -->
     <header>
         <div class="container">
-            <h1><a href="dashboard.php">Babyshop</a></h1>
+            <h1><a href="profil.php">Babyshop</a></h1>
             <ul>
-                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="data-kategori.php">Data Kategori</a></li>
                 <li><a href="data-produk.php">Data Produk</a></li>
@@ -68,7 +67,7 @@
                             echo '<script>alert("Data Berhasil diubah!")</script>';
                             echo '<script>window.location="profil.php"</script>';
                         }else{
-                            echo 'Data Gagal Diubah!' .mysqli_error($conn);
+                            echo 'Data Gagal Diubah!'.mysqli_error($conn);
                         }
 
                     }
