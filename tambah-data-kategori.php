@@ -41,24 +41,42 @@
         <div class="container">
             <h3>Ini adalah Halaman Tambah Data Kategori!</h3>
             <div class="box">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <input type="text" name="nama" placeholder="Nama Kategori" class="input-control" required>
-                    <input type="submit" name="submit" value="Ubah Kategori" class="btn">
+                    <input type="file" name="gambar" class="input-control" required>
+                    <input type="submit" name="submit" value="Tambah Kategori" class="btn">
                 </form>
                 <?php
                 if(isset($_POST['submit'])){
 
                     $nama = ucwords($_POST['nama']);
 
-                    $insert = mysqli_query($conn, "INSERT INTO kategori VALUE (null, '".$nama."') ");
+                    $filename = $_FILES['gambar']['name'];
+                    $tmp_name = $_FILES['gambar']['tmp_name'];
+
+                    $type1 = explode('.', $filename);
+                    $type2 = $type1[1];
+
+                    $newname = 'kategori'.time().'.'.$type2;
+
+                    $tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');
+
+                    if(!in_array($type2, $tipe_diizinkan)){
+                        echo '<script>alert("Format file tidak diizinkan!")</script>';
+
+                    }else{
+                        move_uploaded_file($tmp_name, './produk/'.$newname);
+
+                    $insert = mysqli_query($conn, "INSERT INTO kategori VALUE (null, '".$nama."', '".$newname."') ");
                     if($insert){
                         echo '<script>alert("Data Kategori Berhasil Ditambahkan!")</script>';
                         echo '<script>window.location="data-kategori.php"</script>';
                     }else{
                         echo 'Data Kategori Gagal Ditambahkan!' .mysqli_error($conn);
                     }
-
                 }
+
+            }
                 ?>
             </div>
         </div>

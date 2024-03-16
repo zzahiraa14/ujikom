@@ -47,7 +47,8 @@
                         <tr>
                             <th width="60px">No</th>
                             <th>Nama Kategori</th>
-                            <th width="200px">Update</th>
+                            <th width="50px">Gambar</th>
+                            <th width="120px">Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,11 +62,12 @@
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['nama_kategori'] ?></td>
+                            <td><a href="produk/<?php echo $row['gambar_kategori']?>" target="_blank"><img src="produk/<?php echo $row['gambar_kategori'] ?>" width="80px"></a></td>
                             <td><a href="edit-data-kategori.php?id=<?php echo $row['id_kategori'] ?>">Edit</a> || <a href="hapus-data-kategori.php?idk=<?php echo $row['id_kategori'] ?>" onclick="return confirm('Konfirmasi hapus Data Kategori')">Hapus</a></td>
                         </tr>
                         <?php }}else{ ?>
                             <tr>
-                                <td colspan="3">Tidak Ada Data</td>
+                                <td colspan="4">Tidak Ada Data</td>
                             </tr>
                         <?php } ?>
                     </tbody>

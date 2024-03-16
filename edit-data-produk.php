@@ -54,7 +54,6 @@
                             $kategori = mysqli_query($conn, "SELECT * FROM kategori ORDER BY id_kategori DESC");
                             while($r = mysqli_fetch_array($kategori)){
 
-                            
                         ?>
                         <option value="<?php echo $r['id_kategori'] ?>" <?php echo ($r['id_kategori'] == $p->id_kategori)?'selected':''; ?>><?php echo $r['nama_kategori'] ?></option>
                         <?php } ?>

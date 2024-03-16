@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
     include 'db.php';
     $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
     $a = mysqli_fetch_object($kontak);
@@ -39,7 +40,7 @@
     <div class="search">
         <div class="container">
             <form action="produk.php">
-                <input type="search" name="search" placeholder="Cari disini...">
+                <input type="search" name="search" placeholder="Cari disini..." value="<?php echo $_GET['search'] ?>">
                 <input type="submit" name="cari" value="Cari Produk">
             </form>
         </div>
@@ -51,7 +52,10 @@
             <h1 class="tengah">Produk</h1>
             <div class="box">
                 <?php 
-                    $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id_produk DESC LIMIT 45");
+                    if($_GET['search'] != '' || $_GET['kat'] != ''){
+                        $where = "AND nama_produk LIKE '%".$_GET['search']."%' AND id_kategori LIKE '%".$_GET['kat']."%' ";
+                    }
+                    $produk = mysqli_query($conn, "SELECT * FROM produk WHERE status_produk = 1 $where ORDER BY id_produk DESC");
                     if(mysqli_num_rows($produk) > 0){
                         while($p = mysqli_fetch_array($produk)){
                    

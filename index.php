@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     include 'db.php';
     $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
     $a = mysqli_fetch_object($kontak);
@@ -39,7 +40,7 @@
     <div class="search">
         <div class="container">
             <form action="produk.php">
-                <input type="search" name="search" placeholder="Cari disini...">
+                <input type="search" name="search" placeholder="Cari disini..." value="<?php echo $_GET['search'] ?>">
                 <input type="submit" name="cari" value="Cari Produk">
             </form>
         </div>
@@ -50,38 +51,49 @@
         <div class="container">
             <h1 class="tengah">Kategori</h1>
             <div class="box">
-                    <div class="row">
-                        <div class="col-12 mt-3">
-                            <img class="img-fluid" src="img/set-baju.png" width="200px" alt="Set Baju">
-                            <h3 class="text-center mt-3 mb-3">Set Baju</h3>
-                            <p class="text-center"><a class="btn btn-success" href="set-baju.php">Lihat Produk</a></p>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="img-fluid" src="img/sepatu.png" width="200px" alt="Sepatu">
-                            <h3 class="text-center mt-3 mb-3">Sepatu</h3>
-                            <p class="text-center"><a class="btn btn-success" href="sepatu.php">Lihat Produk</a></p>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="img-fluid" src="img/botol-susu.png" width="200px" alt="Botol Susu">
-                            <h3 class="text-center mt-3 mb-3">Botol Susu</h3>
-                            <p class="text-center"><a class="btn btn-success" href="botol-susu.php">Lihat Produk</a></p>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="img-fluid" src="img/mainan.png" width="200px" alt="Mainan">
-                            <h3 class="text-center mt-3 mb-3">Mainan</h3>
-                            <p class="text-center"><a class="btn btn-success" href="mainan.php">Lihat Produk</a></p>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="img-fluid" src="img/popok.png" width="200px" alt="Popok">
-                            <h3 class="text-center mt-3 mb-3">Popok</h3>
-                            <p class="text-center"><a class="btn btn-success" href="popok.php">Lihat Produk</a></p>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="img-fluid" src="img/perlengkapan-mandi.png" width="200px" alt="Perlengkapan Mandi">
-                            <h3 class="text-center mt-3 mb-3">Perlengkapan Mandi</h3>
-                            <p class="text-center"><a class="btn btn-success" href="perlengkapan-mandi.php">Lihat Produk</a></p>
-                        </div>
+                <?php
+                    $kategori = mysqli_query($conn, "SELECT * FROM kategori ORDER BY id_kategori DESC");
+                    if(mysqli_num_rows($kategori) > 0){
+                        while($k = mysqli_fetch_array($kategori)){   
+                ?>
+
+                    <a href="produk.php?kat=<?php echo $k['id_kategori'] ?>">
+                <div class="col-6">
+                    <img src="produk/<?php echo $k['gambar_kategori'] ?>" width="200px">
+                    <p><?php echo $k['nama_kategori'] ?></p>
+                </div>   
+                    </a> 
+                <?php }}else{ ?>
+                    <p>Kategori tidak ada</p>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- produk -->
+    <div class="section">
+        <div class="container">
+            <h1 class="tengah">Produk</h1>
+            <div class="box">
+                <?php 
+                    if($_GET['search'] != '' || $_GET['kat'] != ''){
+                        $where = "AND nama_produk LIKE '%".$_GET['search']."%' AND id_kategori LIKE '%".$_GET['kat']."%' ";
+                    }
+                    $produk = mysqli_query($conn, "SELECT * FROM produk WHERE status_produk = 1 $where ORDER BY id_produk DESC");
+                    if(mysqli_num_rows($produk) > 0){
+                        while($p = mysqli_fetch_array($produk)){
+                   
+                ?>
+                <a href="detail-produk.php?id=<?php echo $p['id_produk'] ?>">
+                    <div class="col-3">
+                        <img src="produk/<?php echo $p['gambar_produk'] ?>">
+                        <p class="nama"><?php echo $p['nama_produk'] ?></p>
+                        <p class="harga">Rp. <?php echo $p['harga_produk'] ?></p>
                     </div>
+                </a>
+                <?php }}else{ ?>
+                    <p>Produk Tidak Ada</p>
+                <?php } ?>
             </div>
         </div>
     </div>
