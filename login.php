@@ -15,6 +15,7 @@
 <body id="bg-login">
     <div class="box-login">
         <h2>Login Babyshop</h2>
+        <img class="bg-login" src="img/bg-login1.png" width="90px">
         <form action="" method="POST">
             <input type="text" name="user" placeholder="Username" class="input-control">
             <input type="password" name="pass" placeholder="Password" class="input-control">

@@ -26,6 +26,7 @@
     <!-- header -->
     <header>
         <div class="container">
+        <img class="logo" src="img/bg-login.png" width="55px">
             <h1><a href="index.php">Babyshop</a></h1>
             <ul>
                 <li><a href="index.php">Beranda</a></li>
