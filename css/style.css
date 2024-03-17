@@ -26,6 +26,29 @@ a {
     margin-bottom: 15px;
 }
 
+.banner {
+    margin-right: 20px;
+    margin-left: 80px;
+}
+
+.wrap {
+    float: right;
+    margin: 5px;
+}
+
+.teks {
+    margin: 30px;
+}
+
+.bg-success {
+    text-align: justify;
+    font-size: 20px;
+    background-color: #CD5D7D;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .box-login {
     width: 300px;
     min-height: 200px;
@@ -234,3 +257,4 @@ footer {
     margin-top: 25px;
     display: inline-block;
 }
+
