@@ -68,7 +68,7 @@
                             <td><?php echo $row['nama_produk'] ?></td>
                             <td>Rp. <?php echo number_format($row['harga_produk']) ?></td>
                             <td><?php echo $row['deskripsi_produk'] ?></td>
-                            <td><a href="produk/<?php echo $row['gambar_produk']?>" target="_blank"><img src="produk/<?php echo $row['gambar_produk'] ?>" width="100px"></a></td>
+                            <td><a href="produk/<?php echo $row['gambar_produk']?>" target="_blank"><img src="produk/<?php echo $row['gambar_produk'] ?>" width="60px"></a></td>
                             <td><?php echo ($row['status_produk'] == 0)? 'Tidak Aktif':'Aktif'; ?></td>
                             <td><a href="edit-data-produk.php?id=<?php echo $row['id_produk'] ?>"><input type="submit" name="submit" value="Edit" class="btn"></a> || <a href="hapus-data-produk.php?idp=<?php echo $row['id_produk'] ?>" onclick="return confirm('Konfirmasi hapus Data Produk')"><input type="submit" name="submit" value="Hapus" class="btn2"></a></td>
                         </tr>

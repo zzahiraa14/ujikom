@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+    error_reporting(0);
     include 'db.php';
     $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
     $a = mysqli_fetch_object($kontak);
@@ -41,6 +41,7 @@ error_reporting(0);
         <div class="container">
             <form action="produk.php">
                 <input type="search" name="search" placeholder="Cari disini..." value="<?php echo $_GET['search'] ?>">
+                <input type="hidden" name="kat" value="<?php echo $_GET['kat'] ?>">
                 <input type="submit" name="cari" value="Cari Produk">
             </form>
         </div>
@@ -88,5 +89,6 @@ error_reporting(0);
             <small>Copyright &copy; 2024 - Zalfa Zahira Putri | Babyshop</small>
         </div>
     </div>
+
 </body>
 </html>

@@ -41,6 +41,7 @@
         <div class="container">
             <form action="produk.php">
                 <input type="search" name="search" placeholder="Cari disini..." value="<?php echo $_GET['search'] ?>">
+                <input type="hidden" name="kat" value="<?php echo $_GET['kat'] ?>">
                 <input type="submit" name="cari" value="Cari Produk">
             </form>
         </div>
@@ -60,39 +61,11 @@
                     <a href="produk.php?kat=<?php echo $k['id_kategori'] ?>">
                 <div class="col-6">
                     <img src="produk/<?php echo $k['gambar_kategori'] ?>" width="200px">
-                    <p><?php echo $k['nama_kategori'] ?></p>
+                    <p class="besar"><input type="submit" name="submit" value="<?php echo $k['nama_kategori'] ?>" class="btn"></p>
                 </div>   
                     </a> 
                 <?php }}else{ ?>
                     <p>Kategori tidak ada</p>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-
-    <!-- produk -->
-    <div class="section">
-        <div class="container">
-            <h1 class="tengah">Produk</h1>
-            <div class="box">
-                <?php 
-                    if($_GET['search'] != '' || $_GET['kat'] != ''){
-                        $where = "AND nama_produk LIKE '%".$_GET['search']."%' AND id_kategori LIKE '%".$_GET['kat']."%' ";
-                    }
-                    $produk = mysqli_query($conn, "SELECT * FROM produk WHERE status_produk = 1 $where ORDER BY id_produk DESC");
-                    if(mysqli_num_rows($produk) > 0){
-                        while($p = mysqli_fetch_array($produk)){
-                   
-                ?>
-                <a href="detail-produk.php?id=<?php echo $p['id_produk'] ?>">
-                    <div class="col-3">
-                        <img src="produk/<?php echo $p['gambar_produk'] ?>">
-                        <p class="nama"><?php echo $p['nama_produk'] ?></p>
-                        <p class="harga">Rp. <?php echo $p['harga_produk'] ?></p>
-                    </div>
-                </a>
-                <?php }}else{ ?>
-                    <p>Produk Tidak Ada</p>
                 <?php } ?>
             </div>
         </div>

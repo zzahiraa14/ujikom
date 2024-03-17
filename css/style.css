@@ -165,8 +165,9 @@ footer {
 }
 
 .col-6 {
-    width: 20%; 
-    height: 100px;
+    width: 25%;
+    margin: 10px; 
+    margin-left: 65px;
     text-align: center;
     box-sizing: border-box;  
     float: left;
@@ -204,7 +205,7 @@ footer {
 }
 
 .col-3 .nama {
-    margin-bottom: 5px;
+    margin-bottom: 5px; 
 }
 
 .col-3 .harga {
@@ -215,7 +216,7 @@ footer {
 
 .footer {
     padding: 25px 0;
-    background-color: #362424;
+    background-color: #116A7B;
     color: white;
     text-align: center;
 }
