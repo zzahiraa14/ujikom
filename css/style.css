@@ -46,7 +46,25 @@ a {
 
 .btn {
     padding: 8px 15px;
-    background-color: #6d2e46;
+    background-color: #CD5D7D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn2 {
+    padding: 8px 15px;
+    background-color: #116A7B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn3 {
+    padding: 10px 15px;
+    background-color: #ED7D31;
     color: white;
     border: none;
     border-radius: 5px;
@@ -54,7 +72,7 @@ a {
 }
 
 header {
-    background-color: #6d2e46;
+    background-color: #116A7B;
     color: white;
 }
 
@@ -139,7 +157,7 @@ footer {
 
 .search input[type=submit] {
     padding: 12px 15px;
-    background-color: #6d2e46;
+    background-color: #CD5D7D;
     color: white;
     border: none;
     border-radius: 5px;
@@ -191,7 +209,7 @@ footer {
 
 .col-3 .harga {
     font-weight: bold;
-    color: #6d2e46;
+    color: #116A7B;
     float: right;
 }
 

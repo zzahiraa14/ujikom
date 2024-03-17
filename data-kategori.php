@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kategori | Babyshop</title>
+    <title>Data Kategori | Admin</title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- font -->
@@ -41,14 +41,14 @@
         <div class="container">
             <h3>Ini adalah Halaman Data Kategori!</h3>
             <div class="box">
-                <p class="kata"><a href="tambah-data-kategori.php">Tambah Data Kategori</a></p>
+                <p class="kata"><a href="tambah-data-kategori.php"><input type="submit" name="submit" value="Tambah Data Kategori" class="btn3"></a></p>
                 <table border="1" cellspacing="0" class="table">
                     <thead>
                         <tr>
                             <th width="60px">No</th>
                             <th>Nama Kategori</th>
-                            <th width="50px">Gambar</th>
-                            <th width="120px">Update</th>
+                            <th width="80px">Gambar</th>
+                            <th width="160px">Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,8 +62,8 @@
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['nama_kategori'] ?></td>
-                            <td><a href="produk/<?php echo $row['gambar_kategori']?>" target="_blank"><img src="produk/<?php echo $row['gambar_kategori'] ?>" width="80px"></a></td>
-                            <td><a href="edit-data-kategori.php?id=<?php echo $row['id_kategori'] ?>">Edit</a> || <a href="hapus-data-kategori.php?idk=<?php echo $row['id_kategori'] ?>" onclick="return confirm('Konfirmasi hapus Data Kategori')">Hapus</a></td>
+                            <td><a href="produk/<?php echo $row['gambar_kategori']?>" target="_blank"><img src="produk/<?php echo $row['gambar_kategori'] ?>" width="120px"></a></td>
+                            <td><a href="edit-data-kategori.php?id=<?php echo $row['id_kategori'] ?>"><input type="submit" name="submit" value="Edit" class="btn"></a> || <a href="hapus-data-kategori.php?idk=<?php echo $row['id_kategori'] ?>" onclick="return confirm('Konfirmasi hapus Data Kategori')"><input type="submit" name="submit" value="Hapus" class="btn2"></a></td>
                         </tr>
                         <?php }}else{ ?>
                             <tr>

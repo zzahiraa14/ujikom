@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Produk | Babyshop</title>
+    <title>Edit Produk | Admin</title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- font -->
@@ -70,7 +70,7 @@
                         <option value="1" <?php echo ($p->status_produk == 1)? 'selected':''; ?>>Aktif</option>
                         <option value="0" <?php echo ($p->status_produk == 0)? 'selected':''; ?>>Tidak Aktif</option>
                     </select>
-                    <input type="submit" name="submit" value="Tambah Produk" class="btn">
+                    <input type="submit" name="submit" value="Ubah Produk" class="btn">
                 </form>
                 <?php
                 if(isset($_POST['submit'])){

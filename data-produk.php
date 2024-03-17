@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Produk | Babyshop</title>
+    <title>Data Produk | Admin</title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- font -->
@@ -41,18 +41,18 @@
         <div class="container">
             <h3>Ini adalah Halaman Data Produk!</h3>
             <div class="box">
-                <p class="kata"><a href="tambah-data-produk.php">Tambah Data Produk</a></p>
+                <p class="kata"><a href="tambah-data-produk.php"><input type="submit" name="submit" value="Tambah Data Produk" class="btn3"></a></p>
                 <table border="1" cellspacing="0" class="table">
                     <thead>
                         <tr>
                             <th width="30px">No</th>
                             <th width="150px">Nama Kategori</th>
                             <th width="320px">Nama Produk</th>
-                            <th width="160px">Harga</th>
+                            <th width="180px">Harga</th>
                             <th width="500px">Deskripsi</th>
                             <th width="30px">Gambar</th>
                             <th width="70px">Status</th>
-                            <th width="200px">Update</th>
+                            <th width="320px">Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,9 +68,9 @@
                             <td><?php echo $row['nama_produk'] ?></td>
                             <td>Rp. <?php echo number_format($row['harga_produk']) ?></td>
                             <td><?php echo $row['deskripsi_produk'] ?></td>
-                            <td><a href="produk/<?php echo $row['gambar_produk']?>" target="_blank"><img src="produk/<?php echo $row['gambar_produk'] ?>" width="80px"></a></td>
+                            <td><a href="produk/<?php echo $row['gambar_produk']?>" target="_blank"><img src="produk/<?php echo $row['gambar_produk'] ?>" width="100px"></a></td>
                             <td><?php echo ($row['status_produk'] == 0)? 'Tidak Aktif':'Aktif'; ?></td>
-                            <td><a href="edit-data-produk.php?id=<?php echo $row['id_produk'] ?>">Edit</a> || <a href="hapus-data-produk.php?idp=<?php echo $row['id_produk'] ?>" onclick="return confirm('Konfirmasi hapus Data Produk')">Hapus</a></td>
+                            <td><a href="edit-data-produk.php?id=<?php echo $row['id_produk'] ?>"><input type="submit" name="submit" value="Edit" class="btn"></a> || <a href="hapus-data-produk.php?idp=<?php echo $row['id_produk'] ?>" onclick="return confirm('Konfirmasi hapus Data Produk')"><input type="submit" name="submit" value="Hapus" class="btn2"></a></td>
                         </tr>
                         <?php }}else{ ?>
                             <tr>
