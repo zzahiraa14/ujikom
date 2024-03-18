@@ -62,7 +62,7 @@
                     <a href="produk.php?kat=<?php echo $k['id_kategori'] ?>">
                 <div class="col-6">
                     <img src="produk/<?php echo $k['gambar_kategori'] ?>" width="200px">
-                    <p class="besar"><input type="submit" name="submit" value="<?php echo $k['nama_kategori'] ?>" class="btn"></p>
+                    <p><input type="submit" name="submit" value="<?php echo $k['nama_kategori'] ?>" class="btn"></p>
                 </div>   
                     </a> 
                 <?php }}else{ ?>

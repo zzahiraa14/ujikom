@@ -44,10 +44,22 @@
             <img class="banner" src="img/bg-login2.png" width="300px">
             </div>
             <h1 class="teks">Tentang Kami</h1>
-                <p class="teks">BabyShop | Mom's care adalah perusahaan yang bergerak dalam bidang pengadaan segala perlengkapan bayi. Dengan mengedepankan kualitas dan pelayanan, kami siap membantu para Bunda dalam memenuhi kebutuhan buah hati.</p>
+                <p class="teks">Babyshop adalah perusahaan yang bergerak dalam bidang pengadaan segala perlengkapan bayi. Dengan mengedepankan kualitas dan pelayanan, kami siap membantu para Bunda dalam memenuhi kebutuhan sang buah hati.</p>
                 <p class="teks">Kami menyediakan berbagai perlengkapan bayi, dengan mengedepankan profesionalitas, kualitas & pelayanan.</p>
         </div>  
     </section>
+
+    <div class="section">
+        <div class="container">
+        <h1 class="teks1">Pelayanan Kami</h1>
+        <p class="teks1">Kami melakukan pelayanan dengan baik demi kepuasan <br> dan kenyamanan saat berbelanja!</p>
+            <h2>Layanan Pengiriman</h2>
+            <h2>Pengiriman & Pengembalian</h2>
+            <h2>Promosi</h2>
+            <h2>Layanan 24 Jam</h2>
+        </div>
+    </div>
+
 
     <!-- footer -->
     <div class="footer">
