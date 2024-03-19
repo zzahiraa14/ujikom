@@ -46,6 +46,18 @@ a {
     font-size: 22px;
 }
 
+h2 {
+    width: 220px;
+    height: 210px;
+    float: left;
+    text-align: center;
+    padding: 25px;
+    margin: 20px;
+    color: #116A7B;
+    border-radius: 4px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
 .bg-success {
     text-align: justify;
     font-size: 20px;
@@ -154,18 +166,6 @@ footer {
 
 .section {
     padding: 20px 0;
-}
-
-h2 {
-    width: 220px;
-    height: 210px;
-    float: left;
-    text-align: center;
-    padding: 25px;
-    margin: 20px;
-    color: #116A7B;
-    border-radius: 4px;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
 h2:hover {
@@ -280,12 +280,7 @@ h2:hover {
     text-align: center;
 }
 
-.footer p {
-    margin-bottom: 10px;
-}
-
 .footer small {
-    margin-top: 25px;
     display: inline-block;
 }
 
