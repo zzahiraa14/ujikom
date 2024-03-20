@@ -258,3 +258,31 @@ footer {
     display: inline-block;
 }
 
+.col-2 {
+    width: 50%;
+    min-height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.col-2 img {
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.col-2 h3 {
+    margin-bottom: 10px;
+}
+
+.col-2 h4 {
+    color: #116A7B;
+}
+
+.col-2 p {
+    margin: 15px 0; 
+    text-align: justify;
+    line-height: 25px;
+    font-size: 14px;
+}

@@ -3,6 +3,9 @@
     include 'db.php';
     $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
     $a = mysqli_fetch_object($kontak);
+
+    $produk = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = '".$_GET['id']."' ");
+    $p = mysqli_fetch_object($produk);
 ?>
 
 <!DOCTYPE html>
@@ -48,30 +51,22 @@
         </div>
     </div>
 
-    <!-- produk -->
+    <!-- detail produk -->
     <div class="section">
         <div class="container">
-            <h1 class="tengah">Produk</h1>
+            <h3>Detail Produk</h3>
             <div class="box">
-                <?php 
-                    if($_GET['search'] != '' || $_GET['kat'] != ''){
-                        $where = "AND nama_produk LIKE '%".$_GET['search']."%' AND id_kategori LIKE '%".$_GET['kat']."%' ";
-                    }
-                    $produk = mysqli_query($conn, "SELECT * FROM produk WHERE status_produk = 1 $where ORDER BY id_produk DESC");
-                    if(mysqli_num_rows($produk) > 0){
-                        while($p = mysqli_fetch_array($produk)){
-                   
-                ?>
-                <a href="detail-produk.php?id=<?php echo $p['id_produk'] ?>">
-                    <div class="col-3">
-                        <img src="produk/<?php echo $p['gambar_produk'] ?>">
-                        <p class="nama"><?php echo $p['nama_produk'] ?></p>
-                        <p class="harga">Rp. <?php echo number_format($p['harga_produk']) ?></p>
-                    </div>
-                </a>
-                <?php }}else{ ?>
-                    <p>Produk Tidak Ada</p>
-                <?php } ?>
+                <div class="col-2">
+                    <img src="produk/<?php echo $p->gambar_produk ?>">
+                </div>
+                <div class="col-2">
+                    <h3><?php echo $p->nama_produk ?></h3>
+                    <h4>Rp. <?php echo number_format($p->harga_produk) ?></h4>
+                    <p>Deskripsi Produk :<br>
+                        <?php echo $p->deskripsi_produk ?>
+                    </p>
+                    <p class="kata"><a href="keranjang.php"><input type="submit" name="submit" value="Masukkan ke Keranjang" class="btn3"></a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -86,7 +81,7 @@
             <p><?php echo $a->email ?></p>
 
             <h4>No Handphone</h4>
-            <p><?php echo $a->no_telp ?></p>
+            <p><a href="https://api.whatsapp.com/send?phone=<?php echo $a->no_telp ?>&text=Hai, Saya tertarik dengan produk Anda!" target="_blank"></a></p>
             <small>Copyright &copy; 2024 - Zalfa Zahira Putri | Babyshop</small>
         </div>
     </div>
