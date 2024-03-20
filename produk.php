@@ -1,3 +1,8 @@
+<?php
+    error_reporting(0);
+    include 'db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +64,7 @@
                     <div class="col-3">
                         <img src="produk/<?php echo $p['gambar_produk'] ?>">
                         <p class="nama"><?php echo $p['nama_produk'] ?></p>
-                        <p class="harga">Rp. <?php echo $p['harga_produk'] ?></p>
+                        <p class="harga">Rp. <?php echo number_format($p['harga_produk'] ) ?></p>
                     </div>
                 </a>
                 <?php }}else{ ?>

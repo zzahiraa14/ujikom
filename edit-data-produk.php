@@ -2,7 +2,7 @@
     session_start();
     include 'db.php';
     if($_SESSION['status_login'] != true){
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="login-admin.php"</script>';
     }
 
     $produk = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = '".$_GET['id']."' ");

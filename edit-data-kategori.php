@@ -2,7 +2,7 @@
     session_start();
     include 'db.php';
     if($_SESSION['status_login'] != true){
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="login-admin.php"</script>';
     }
 
     $kategori = mysqli_query($conn, "SELECT * FROM kategori WHERE id_kategori = '".$_GET['id']."' ");

@@ -2,7 +2,7 @@
     session_start();
     include 'db.php';
     if($_SESSION['status_login'] != true){
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="login-admin.php"</script>';
     }
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['nama_kategori'] ?></td>
                             <td><a href="produk/<?php echo $row['gambar_kategori']?>" target="_blank"><img src="produk/<?php echo $row['gambar_kategori'] ?>" width="120px"></a></td>
-                            <td><a href="edit-data-kategori.php?id=<?php echo $row['id_kategori'] ?>"><input type="submit" name="submit" value="Edit" class="btn"></a> || <a href="hapus-data-kategori.php?idk=<?php echo $row['id_kategori'] ?>" onclick="return confirm('Konfirmasi hapus Data Kategori')"><input type="submit" name="submit" value="Hapus" class="btn2"></a></td>
+                            <td><a href="edit-data-kategori.php?id=<?php echo $row['id_kategori'] ?>"><input type="submit" name="submit" value="Edit" class="btn"></a> | <a href="hapus-data-kategori.php?idk=<?php echo $row['id_kategori'] ?>" onclick="return confirm('Konfirmasi hapus Data Kategori')"><input type="submit" name="submit" value="Hapus" class="btn2"></a></td>
                         </tr>
                         <?php }}else{ ?>
                             <tr>

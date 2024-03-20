@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['status_login'] != true){
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="login-admin.php"</script>';
     }
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
         <div class="container">
             <h3>Ini adalah Halaman Dashboard!</h3>
             <div class="box">
-                <h4>Selamat Datang <?php echo $_SESSION['a_global']->nama_admin ?> di Babyshop!</h4>
+                <h4>Selamat Datang, <?php echo $_SESSION['a_global']->nama_admin ?> di Babyshop!</h4>
             </div>
         </div>
     </div>
