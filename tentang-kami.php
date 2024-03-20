@@ -46,12 +46,10 @@
         <div class="container">
         <h1 class="teks1">Pelayanan Kami</h1>
         <p class="teks1">Kami melakukan pelayanan dengan baik demi kepuasan <br> dan kenyamanan saat berbelanja!</p>
-        <div class="teks2">
-            <h2>Layanan Pengiriman</h2>
-            <h2>Pengiriman & Pengembalian</h2>
-            <h2>Promosi</h2>
-            <h2>Layanan 24 Jam</h2>
-        </div>
+            <h2 class="teks2">Layanan Pengiriman</h2>
+            <h2 class="teks2">Pengiriman & Pengembalian</h2>
+            <h2 class="teks2">Promosi</h2>
+            <h2 class="teks2">Layanan 24 Jam</h2>
         </div>
     </div>
 
