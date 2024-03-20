@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Mar 2024 pada 16.27
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Generation Time: Mar 20, 2024 at 05:30 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `no_telp`, `email`, `alamat`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `no_telp`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -57,21 +57,147 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `gambar_kategori`) VALUES
-(1, 'Set Baju', 'kategori1710575819.png'),
-(2, 'Sepatu', 'kategori1710575801.png'),
-(3, 'Botol Susu', 'kategori1710575771.png'),
-(4, 'Mainan', 'kategori1710575762.png'),
-(5, 'Popok', 'kategori1710575753.png'),
-(6, 'Perlengkapan Mandi', 'kategori1710575739.png');
+(1, 'Set Baju', 'kategori1710901793.png'),
+(2, 'Sepatu', 'kategori1710901779.png'),
+(3, 'Botol Susu', 'kategori1710901765.png'),
+(4, 'Mainan', 'kategori1710901756.png'),
+(5, 'Popok', 'kategori1710901735.png'),
+(6, 'Perlengkapan Mandi', 'kategori1710901721.png');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `keranjang`
+--
+
+CREATE TABLE `keranjang` (
+  `id_keranjang` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `harga_produk` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_omset`
+--
+
+CREATE TABLE `laporan_omset` (
+  `id_laporan_omset` int(11) NOT NULL,
+  `invoice` varchar(200) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total_omset` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_pembatalan`
+--
+
+CREATE TABLE `laporan_pembatalan` (
+  `id_laporan_pembatalan` int(11) NOT NULL,
+  `id_pesanan` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `jumlah` varchar(100) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_penjualan`
+--
+
+CREATE TABLE `laporan_penjualan` (
+  `id_laporan_penjualan` int(11) NOT NULL,
+  `invoice` varchar(200) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `jumlah_terjual` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_pesanan`
+--
+
+CREATE TABLE `laporan_pesanan` (
+  `id_laporan_pesanan` int(11) NOT NULL,
+  `invoice` varchar(200) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_profit`
+--
+
+CREATE TABLE `laporan_profit` (
+  `id_laporan_profit` int(11) NOT NULL,
+  `invoice` varchar(200) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total_profit` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan_stok`
+--
+
+CREATE TABLE `laporan_stok` (
+  `id_laporan_stok` int(11) NOT NULL,
+  `id_stok` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `jumlah_stok` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id_pesanan` int(11) NOT NULL,
+  `invoice` varchar(200) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `harga_produk` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `provinsi` varchar(100) NOT NULL,
+  `kota` varchar(100) NOT NULL,
+  `alamat` text NOT NULL,
+  `kode_pos` int(11) NOT NULL,
+  `terima` varchar(50) NOT NULL,
+  `tolak` varchar(50) NOT NULL,
+  `cek` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -86,7 +212,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`, `deskripsi_produk`, `gambar_produk`, `status_produk`, `tanggal_pembuatan`) VALUES
@@ -145,50 +271,208 @@ INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`,
 (54, 6, 'Perlengkapan Mandi  Fresh & Nourish Bath Doy', 24000, 'Didesain khusus untuk kulit bayi. Dibanding dengan formula sabun.', 'produk1710656323.png', 1, '2024-03-17 06:18:43'),
 (55, 6, 'Perlengkapan Mandi Newborn Gift Pack', 70000, 'Newborn Body Wash 200ml. Newborn Lotion 100ml. Newborn Cream 50gr. Sensitive Wipes 50’s.', 'produk1710656373.png', 1, '2024-03-17 06:19:33');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stok`
+--
+
+CREATE TABLE `stok` (
+  `id_stok` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `harga_produk` int(11) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `nama_user` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `no_telp` varchar(13) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `alamat` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  ADD PRIMARY KEY (`id_keranjang`),
+  ADD UNIQUE KEY `id_user` (`id_user`);
+
+--
+-- Indexes for table `laporan_omset`
+--
+ALTER TABLE `laporan_omset`
+  ADD PRIMARY KEY (`id_laporan_omset`),
+  ADD UNIQUE KEY `invoice` (`invoice`);
+
+--
+-- Indexes for table `laporan_pembatalan`
+--
+ALTER TABLE `laporan_pembatalan`
+  ADD PRIMARY KEY (`id_laporan_pembatalan`),
+  ADD UNIQUE KEY `id_pesanan` (`id_pesanan`);
+
+--
+-- Indexes for table `laporan_penjualan`
+--
+ALTER TABLE `laporan_penjualan`
+  ADD PRIMARY KEY (`id_laporan_penjualan`),
+  ADD UNIQUE KEY `invoice` (`invoice`);
+
+--
+-- Indexes for table `laporan_pesanan`
+--
+ALTER TABLE `laporan_pesanan`
+  ADD PRIMARY KEY (`id_laporan_pesanan`),
+  ADD UNIQUE KEY `invoice` (`invoice`);
+
+--
+-- Indexes for table `laporan_profit`
+--
+ALTER TABLE `laporan_profit`
+  ADD PRIMARY KEY (`id_laporan_profit`),
+  ADD UNIQUE KEY `id_produk` (`id_produk`);
+
+--
+-- Indexes for table `laporan_stok`
+--
+ALTER TABLE `laporan_stok`
+  ADD PRIMARY KEY (`id_laporan_stok`),
+  ADD UNIQUE KEY `id_stok` (`id_stok`);
+
+--
+-- Indexes for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`id_pesanan`);
+
+--
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`),
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `stok`
+--
+ALTER TABLE `stok`
+  ADD PRIMARY KEY (`id_stok`),
+  ADD UNIQUE KEY `nama_produk` (`nama_produk`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `laporan_omset`
+--
+ALTER TABLE `laporan_omset`
+  MODIFY `id_laporan_omset` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `laporan_pembatalan`
+--
+ALTER TABLE `laporan_pembatalan`
+  MODIFY `id_laporan_pembatalan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `laporan_penjualan`
+--
+ALTER TABLE `laporan_penjualan`
+  MODIFY `id_laporan_penjualan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `laporan_pesanan`
+--
+ALTER TABLE `laporan_pesanan`
+  MODIFY `id_laporan_pesanan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `laporan_profit`
+--
+ALTER TABLE `laporan_profit`
+  MODIFY `id_laporan_profit` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `laporan_stok`
+--
+ALTER TABLE `laporan_stok`
+  MODIFY `id_laporan_stok` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT for table `stok`
+--
+ALTER TABLE `stok`
+  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
