@@ -1,8 +1,6 @@
 <?php
     error_reporting(0);
     include 'db.php';
-    $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
-    $a = mysqli_fetch_object($kontak);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +60,7 @@
                     <a href="produk.php?kat=<?php echo $k['id_kategori'] ?>">
                 <div class="col-6">
                     <img src="produk/<?php echo $k['gambar_kategori'] ?>" width="200px">
-                    <p class="besar"><input type="submit" name="submit" value="<?php echo $k['nama_kategori'] ?>" class="btn"></p>
+                    <p><input type="submit" name="submit" value="<?php echo $k['nama_kategori'] ?>" class="btn"></p>
                 </div>   
                     </a> 
                 <?php }}else{ ?>
@@ -75,14 +73,6 @@
     <!-- footer -->
     <div class="footer">
         <div class="container">
-            <h4>Alamat</h4>
-            <p><?php echo $a->alamat ?></p>
-
-            <h4>Email</h4>
-            <p><?php echo $a->email ?></p>
-
-            <h4>No Handphone</h4>
-            <p><?php echo $a->no_telp ?></p>
             <small>Copyright &copy; 2024 - Zalfa Zahira Putri | Babyshop</small>
         </div>
     </div>

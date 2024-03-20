@@ -1,9 +1,16 @@
+<?php
+    error_reporting(0);
+    include 'db.php';
+    $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
+    $a = mysqli_fetch_object($kontak);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami | Babyshop</title>
+    <title>Kontak | Babyshop</title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- font -->
@@ -30,31 +37,27 @@
         </div>
     </header>
 
-    <!-- banner -->
-    <section class="bg-success">
-        <div class="container">
-            <div class="wrap">
-            <img class="banner" src="img/bg-login2.png" width="300px">
-            </div>
-            <h1 class="teks">Tentang Kami</h1>
-                <p class="teks">Babyshop adalah perusahaan yang bergerak dalam bidang pengadaan segala perlengkapan bayi. Dengan mengedepankan kualitas dan pelayanan, kami siap membantu para Bunda dalam memenuhi kebutuhan sang buah hati.</p>
-                <p class="teks">Kami menyediakan berbagai perlengkapan bayi, dengan mengedepankan profesionalitas, kualitas & pelayanan.</p>
-        </div>  
-    </section>
-
+    <!-- kontak -->
     <div class="section">
         <div class="container">
-        <h1 class="teks1">Pelayanan Kami</h1>
-        <p class="teks1">Kami melakukan pelayanan dengan baik demi kepuasan <br> dan kenyamanan saat berbelanja!</p>
-        <div class="teks2">
-            <h2>Layanan Pengiriman</h2>
-            <h2>Pengiriman & Pengembalian</h2>
-            <h2>Promosi</h2>
-            <h2>Layanan 24 Jam</h2>
-        </div>
+            <h1 class="tengah">Hubungi Kami</h1>
+            <p class="teks1">Jika ada kesalahan atau kendala dalam pembelian silahkan hubungi kami. Bisa juga untuk mendatangi store kami dibawah ini! Terima kasih.</p>
         </div>
     </div>
 
+    <!-- banner -->
+    <section class="bg-success">
+        <div class="container">
+        <h4>Alamat</h4>
+            <p><?php echo $a->alamat ?></p>
+
+            <h4>Email</h4>
+            <p><?php echo $a->email ?></p>
+
+            <h4>No Handphone</h4>
+            <p><a href="tel:<?php echo $a->no_telp ?>"></a>089678273021</p>
+        </div>  
+    </section>
 
     <!-- footer -->
     <div class="footer">

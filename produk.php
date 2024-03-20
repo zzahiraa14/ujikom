@@ -1,8 +1,6 @@
 <?php
     error_reporting(0);
     include 'db.php';
-    $kontak = mysqli_query($conn, "SELECT no_telp, email, alamat FROM admin WHERE id_admin =  1");
-    $a = mysqli_fetch_object($kontak);
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +64,7 @@
                     <div class="col-3">
                         <img src="produk/<?php echo $p['gambar_produk'] ?>">
                         <p class="nama"><?php echo $p['nama_produk'] ?></p>
-                        <p class="harga">Rp. <?php echo number_format($p['harga_produk']) ?></p>
+                        <p class="harga">Rp. <?php echo $p['harga_produk'] ?></p>
                     </div>
                 </a>
                 <?php }}else{ ?>
@@ -79,14 +77,6 @@
     <!-- footer -->
     <div class="footer">
         <div class="container">
-            <h4>Alamat</h4>
-            <p><?php echo $a->alamat ?></p>
-
-            <h4>Email</h4>
-            <p><?php echo $a->email ?></p>
-
-            <h4>No Handphone</h4>
-            <p><?php echo $a->no_telp ?></p>
             <small>Copyright &copy; 2024 - Zalfa Zahira Putri | Babyshop</small>
         </div>
     </div>

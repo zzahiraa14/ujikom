@@ -40,6 +40,24 @@ a {
     margin: 30px;
 }
 
+.teks1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 22px;
+}
+
+.teks2 {
+    width: 220px;
+    height: 210px;
+    float: left;
+    text-align: center;
+    padding: 25px;
+    margin: 20px;
+    color: #116A7B;
+    border-radius: 4px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
 .bg-success {
     text-align: justify;
     font-size: 20px;
@@ -81,6 +99,10 @@ a {
     cursor: pointer;
 }
 
+.btn:hover {
+    background-color: #116A7B;
+}
+
 .btn2 {
     padding: 8px 15px;
     background-color: #116A7B;
@@ -88,6 +110,10 @@ a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btn2:hover {
+    background-color: #CD5D7D;
 }
 
 .btn3 {
@@ -140,6 +166,11 @@ footer {
 
 .section {
     padding: 20px 0;
+}
+
+h2:hover {
+    background-color: pink;
+    transition: 1s !important;
 }
 
 .box {
@@ -225,7 +256,7 @@ footer {
 }
 
 .col-3:hover {
-    box-shadow: 0 0 3px #999;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
 .col-3 img {
@@ -249,12 +280,7 @@ footer {
     text-align: center;
 }
 
-.footer p {
-    margin-bottom: 10px;
-}
-
 .footer small {
-    margin-top: 25px;
     display: inline-block;
 }
 

@@ -2,7 +2,7 @@
     session_start();
     include 'db.php';
     if($_SESSION['status_login'] != true){
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="login-admin.php"</script>';
     }
 
     $produk = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = '".$_GET['id']."' ");
@@ -35,6 +35,7 @@
         <img class="logo" src="img/bg-login.png" width="55px">
             <h1><a href="profil.php">Babyshop</a></h1>
             <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="data-kategori.php">Data Kategori</a></li>
                 <li><a href="data-produk.php">Data Produk</a></li>
